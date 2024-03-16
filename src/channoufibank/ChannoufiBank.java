@@ -21,7 +21,7 @@ public class ChannoufiBank extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/resources/fxml/Login.fxml"));
+         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("/resources/fxml/client/Dashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
