@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -39,7 +40,13 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        login_btn.setOnAction(event ->Model.getInstance().getViewFactory().showClientWindow());
-    }    
-    
+        login_btn.setOnAction(event -> onLogin());
+    }
+
+    private void onLogin() {
+        Stage stage = (Stage) error_lbl.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showClientWindow();
+    }
+
 }

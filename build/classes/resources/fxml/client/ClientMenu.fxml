@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="200.0" styleClass="main_menu_container" stylesheets="@../../Styles/client/clientmenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="200.0" styleClass="main_menu_container" stylesheets="@../../Styles/client/clientmenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.controller.client.ClientMenuController">
    <children>
       <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
          <children>

@@ -4,6 +4,8 @@
  */
 package channoufibank.Views;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -17,9 +19,16 @@ import resources.controller.client.ClientController;
 public class ViewFactory {
 
     //Client Views
+    private final StringProperty clientSelectedMenuItem;
     private AnchorPane dashboardView;
+    private AnchorPane transactionsView;
 
     public ViewFactory() {
+        this.clientSelectedMenuItem = new SimpleStringProperty("");
+    }
+
+    public StringProperty getClientSelectedMenuItem() {
+        return clientSelectedMenuItem;
     }
 
     public AnchorPane getDashboardView() {
@@ -31,6 +40,18 @@ public class ViewFactory {
             }
         }
         return dashboardView;
+
+    }
+
+    public AnchorPane getTransactionsView() {
+        if (transactionsView == null) {
+            try {
+                transactionsView = new FXMLLoader(getClass().getResource("/resources/fxml/client/Transactions.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return transactionsView;
 
     }
 
@@ -57,5 +78,9 @@ public class ViewFactory {
         stage.setScene(scene);
         stage.setTitle("Channoufi Bank");
         stage.show();
+    }
+
+    public void closeStage(Stage stage) {
+        stage.close();
     }
 }

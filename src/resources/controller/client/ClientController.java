@@ -4,9 +4,11 @@
  */
 package resources.controller.client;
 
+import channoufibank.Models.Model;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.BorderPane;
 
 /**
  * FXML Controller class
@@ -15,12 +17,18 @@ import javafx.fxml.Initializable;
  */
 public class ClientController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    public BorderPane client_parent;
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().addListener((observableValue, oldVal, newVal) -> {
+            switch (newVal) {
+                case "Transactions" ->
+                    client_parent.setCenter(Model.getInstance().getViewFactory().getTransactionsView());
+                default ->
+                    client_parent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
+            }
+        });
+    }
+
 }

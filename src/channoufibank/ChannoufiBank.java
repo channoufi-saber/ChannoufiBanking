@@ -6,10 +6,8 @@ package channoufibank;
 
 import channoufibank.Models.Model;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
@@ -17,19 +15,16 @@ import java.io.IOException;
  * @author channoufisaber
  */
 public class ChannoufiBank extends Application {
-    
-   private static Scene scene;
+
+    private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-         Model.getInstance().getViewFactory().showLoginWindow();
-    } 
-    
+        Model.getInstance().getViewFactory().showLoginWindow();
+    }
 
-    
     public static void main(String[] args) {
         launch();
     }
 
-    
 }
