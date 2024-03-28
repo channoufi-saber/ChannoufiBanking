@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../Styles/client/clientmenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.controller.admin.AdminMenuController">
    <children>
       <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
@@ -34,12 +33,12 @@
                         <FontAwesomeIcon glyphName="LIST" size="20" />
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="36.0" mnemonicParsing="false" text="Deposit">
+                  <Button fx:id="deposit_btn" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" text="Deposit">
                      <graphic>
                         <FontAwesomeIcon glyphName="MONEY" size="20" />
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" styleClass="alt_menu_btn" text="Logout">
+                  <Button fx:id="logout_btn" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" styleClass="alt_menu_btn" text="Logout">
                      <graphic>
                         <FontAwesomeIcon fill="#f8f1f1" glyphName="EXTERNAL_LINK" size="20" />
                      </graphic>
