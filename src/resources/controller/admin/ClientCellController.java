@@ -4,6 +4,7 @@
  */
 package resources.controller.admin;
 
+import channoufibank.Models.Client;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -15,12 +16,15 @@ import javafx.fxml.Initializable;
  */
 public class ClientCellController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    private final Client client;
+
+    public ClientCellController(Client client) {
+        this.client = client;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

@@ -4,6 +4,7 @@
  */
 package resources.controller.client;
 
+import channoufibank.Models.Transaction;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -15,12 +16,15 @@ import javafx.fxml.Initializable;
  */
 public class TransactionCellController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    private final Transaction transaction;
+
+    public TransactionCellController(Transaction transaction) {
+        this.transaction = transaction;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

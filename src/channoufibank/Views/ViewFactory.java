@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import resources.controller.admin.AdminController;
@@ -34,7 +35,6 @@ public class ViewFactory {
     private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
     private AnchorPane clientsView;
     private AnchorPane depositView;
-
 
     public ViewFactory() {
         this.loginAccountType = AccountType.Client;
@@ -139,7 +139,6 @@ public class ViewFactory {
 
     }
 
-
     public void showAdminWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/admin/Admin.fxml"));
         AdminController controller = new AdminController();
@@ -161,6 +160,8 @@ public class ViewFactory {
         }
         Stage stage = new Stage();
         stage.setScene(scene);
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/resources/Images/icon.png"))));
+        stage.setResizable(false);
         stage.setTitle("Channoufi Bank");
         stage.show();
     }
