@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -29,9 +30,13 @@ public class AdminMenuController implements Initializable {
     }
 
     private void addListeners() {
+        
         create_client_btn.setOnAction(event -> onCreateClient());
         clients_btn.setOnAction(event -> onClients());
         deposit_btn.setOnAction(event -> onDeposit());
+        logout_btn.setOnAction(event -> onLogout());
+        
+    
     }
 
     private void onCreateClient() {
@@ -44,5 +49,12 @@ public class AdminMenuController implements Initializable {
 
     private void onDeposit() {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
+    }
+
+    private void onLogout() {
+        Stage stage = (Stage) clients_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showLoginWindow();
+        Model.getInstance().setAdminLoginSuccessFlag(false);
     }
 }

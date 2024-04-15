@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -39,6 +40,7 @@ public class ClientMenuController implements Initializable {
         dashboard_btn.setOnAction(event -> onDashboard());
         transaction_btn.setOnAction(event -> onTransactions());
         accounts_btn.setOnAction(event -> onAccounts());
+        logout_btn.setOnAction(event -> onLogout());
     }
 
     private void onDashboard() {
@@ -53,4 +55,10 @@ public class ClientMenuController implements Initializable {
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
     }
 
+    private void onLogout() {
+        Stage stage = (Stage) dashboard_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showLoginWindow();
+        Model.getInstance().setClientLoginSuccessFlag(false);
+    }
 }
