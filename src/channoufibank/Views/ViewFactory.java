@@ -161,7 +161,7 @@ public class ViewFactory {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/resources/Images/icon.png"))));
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.setTitle("Channoufi Bank");
         stage.show();
     }
