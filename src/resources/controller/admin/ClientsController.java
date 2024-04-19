@@ -6,6 +6,9 @@ package resources.controller.admin;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import channoufibank.Models.Model;
+import channoufibank.Views.ClientCellFactory;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 
@@ -20,7 +23,15 @@ public class ClientsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        initClientsList();
+        clients_listview.setItems(Model.getInstance().getClients());
+        clients_listview.setCellFactory(e -> new ClientCellFactory());
+    }
 
+    private void initClientsList() {
+        if (Model.getInstance().getClients().isEmpty()) {
+            Model.getInstance().setClients();
+        }
     }
 
 }
