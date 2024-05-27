@@ -30,6 +30,17 @@ public class DatabaseDriver {
         return resultSet;
     }
 
+    public ResultSet getTransactions(String pAddress, int limit) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Transactions WHERE Sender='" + pAddress + "' OR Receiver='" + pAddress + "' LIMIT " + limit + ";");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
 
     /*
     * Admin Section
@@ -93,14 +104,13 @@ public class DatabaseDriver {
         }
         return resultSet;
     }
-    
-    
+
     public void depositSavings(String pAddress, double amount) {
         Statement statement;
         try {
             statement = this.conn.createStatement();
-            statement.executeUpdate("UPDATE SavingsAccounts SET Balance="+amount+" WHERE Owner='"+pAddress+"';");
-        }catch (SQLException e){
+            statement.executeUpdate("UPDATE SavingsAccounts SET Balance=" + amount + " WHERE Owner='" + pAddress + "';");
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -108,18 +118,17 @@ public class DatabaseDriver {
     /*
     * Utility Methods
     * */
-    public ResultSet searchClient(String pAddress){
+    public ResultSet searchClient(String pAddress) {
         Statement statement;
-        ResultSet resultSet=null;
-        try{
-            statement=this.conn.createStatement();
-            resultSet=statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='"+pAddress+"';");
-        }catch(SQLException e){
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='" + pAddress + "';");
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return resultSet;
     }
-
 
     public int getLastClientsId() {
         Statement statement;

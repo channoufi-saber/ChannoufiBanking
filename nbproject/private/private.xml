@@ -5,9 +5,15 @@
         <group>
             <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/resources/fxml/client/Dashboard.fxml</file>
             <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/resources/controller/client/DashboardController.java</file>
+            <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/resources/controller/admin/ClientsController.java</file>
+            <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/resources/fxml/client/TransactionCell.fxml</file>
             <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/resources/fxml/client/Client.fxml</file>
+            <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/channoufibank/Models/DatabaseDriver.java</file>
             <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/resources/fxml/client/ClientMenu.fxml</file>
+            <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/channoufibank/Models/Model.java</file>
+            <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/resources/controller/LoginController.java</file>
             <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/channoufibank/ChannoufiBank.java</file>
+            <file>file:/home/channoufisaber/dossSaber/00000000000000000000000000/%5B000000000000000000/premium3/javafx/4.%20Final%20Project%20MazeBank%20Application/work/ChannoufiBank/src/channoufibank/Views/TransactionCellFactory.java</file>
         </group>
     </open-files>
 </project-private>
