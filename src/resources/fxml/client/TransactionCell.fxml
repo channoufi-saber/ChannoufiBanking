@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane id="AnchorPane" prefHeight="60.0" prefWidth="550.0" styleClass="cell_container" stylesheets="@../../Styles/client/transactioncell.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane id="AnchorPane" prefHeight="60.0" prefWidth="550.0" styleClass="cell_container" stylesheets="@../../Styles/client/transactioncell.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="50.0" prefWidth="50.0" styleClass="trans_icon_container" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="5.0">
          <children>
@@ -26,7 +26,7 @@
       </Label>
       <Button fx:id="message_btn" layoutX="442.0" layoutY="18.0" mnemonicParsing="false" styleClass="message_btn" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="18.0">
          <graphic>
-            <FontAwesomeIcon glyphName="BELL" size="14" />
+            <FontAwesomeIcon glyphName="BELL" size="14" wrappingWidth="21.0" />
          </graphic>
       </Button>
    </children>

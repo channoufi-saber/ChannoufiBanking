@@ -6,12 +6,15 @@ package channoufibank.Views;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import resources.controller.admin.AdminController;
 import resources.controller.client.ClientController;
@@ -24,13 +27,13 @@ public class ViewFactory {
 
     private AccountType loginAccountType;
 
-    //Client Views
+    // Client Views
     private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
 
-    //Admin Views
+    // Admin Views
     private AnchorPane createClientView;
     private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
     private AnchorPane clientsView;
@@ -50,7 +53,7 @@ public class ViewFactory {
         this.loginAccountType = loginAccountType;
     }
 
-    //Client Views
+    // Client Views
     public ObjectProperty<ClientMenuOptions> getClientSelectedMenuItem() {
         return clientSelectedMenuItem;
     }
@@ -70,7 +73,8 @@ public class ViewFactory {
     public AnchorPane getTransactionsView() {
         if (transactionsView == null) {
             try {
-                transactionsView = new FXMLLoader(getClass().getResource("/resources/fxml/client/Transactions.fxml")).load();
+                transactionsView = new FXMLLoader(getClass().getResource("/resources/fxml/client/Transactions.fxml"))
+                        .load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -106,7 +110,8 @@ public class ViewFactory {
     public AnchorPane getCreateClientView() {
         if (createClientView == null) {
             try {
-                createClientView = new FXMLLoader(getClass().getResource("/resources/fxml/admin/CreateClient.fxml")).load();
+                createClientView = new FXMLLoader(getClass().getResource("/resources/fxml/admin/CreateClient.fxml"))
+                        .load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -151,18 +156,34 @@ public class ViewFactory {
         createStage(loader);
     }
 
+    public void showMessageWindow(String pAddress, String messageText) {
+        StackPane pane = new StackPane();
+        HBox hBox = new HBox(5);
+        hBox.setAlignment(Pos.CENTER);
+        Label sender = new Label(pAddress);
+        Label message = new Label(messageText);
+        hBox.getChildren().addAll(sender, message);
+        pane.getChildren().add(hBox);
+        Scene scene = new Scene(pane, 300, 100);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Message");
+        stage.setScene(scene);
+        stage.show();
+    }
+
     private void createStage(FXMLLoader loader) {
         Scene scene = null;
         try {
             scene = new Scene(loader.load());
-        } catch (Exception e) {
+        } catch (Exception e){
             e.printStackTrace();
         }
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/resources/Images/icon.png"))));
-        stage.setResizable(true);
-        stage.setTitle("Channoufi Bank");
+        stage.setResizable(false);
+        stage.setTitle("Maze Bank");
         stage.show();
     }
 
